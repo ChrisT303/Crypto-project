@@ -1,40 +1,50 @@
-import React from 'react';
-import {Routes, Route, Link} from 'react-router-dom';
-import {Layout, Typography, Space} from 'antd';
+import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import { Layout, Typography, Space } from "antd";
 
-import './App.css' 
+import "./App.css";
 
-import{ NavBar, Exchanges, Homepage, Currencies, News, CryptoDetails}from './components';
+import {
+  NavBar,
+  Exchanges,
+  Homepage,
+  Currencies,
+  News,
+  CryptoDetails,
+} from "./components";
 
 function App() {
   return (
-    <div className='app'>
-      <div className='navbar'> 
-       <NavBar />
+    <div className="app">
+      <div className="navbar">
+        <NavBar />
       </div>
-      <div className='main'>
-       <Layout>
-          <div className='routes'>
+      <div className="main">
+        <Layout>
+          <div className="routes">
             <Routes>
-              <Route path='/' element={<Homepage/>}>
-              </Route>
-              <Route path='/exchanges' element={<Exchanges/>}>
-              </Route>
-              <Route path='/cryptocurrencies' element={<Currencies/>}>
-              </Route>
-              <Route path='/crypto/:coinId' element={<CryptoDetails/>}>
-              </Route>
-              <Route path='/news' element={<News/>}>
-              </Route>
+              <Route path="/" element={<Homepage />}></Route>
+              <Route path="/exchanges" element={<Exchanges />}></Route>
+              <Route path="/cryptocurrencies" element={<Currencies />}></Route>
+              <Route path="/crypto/:coinId" element={<CryptoDetails />}></Route>
+              <Route path="/news" element={<News />}></Route>
             </Routes>
           </div>
-
-
-       </Layout>
+        </Layout>
+        <div className="footer">
+          <Typography.Title
+            level={5}
+            style={{ color: "white", textAlign: "center" }}
+          >
+            Crypto World <br />
+          </Typography.Title>
+          <Space>
+            <Link to="/">Home</Link>
+            <Link to="/exchanges">Exchanges</Link>
+            <Link to="/news">News</Link>
+          </Space>
         </div>
-        <div className='footer'> 
-
-        </div>
+      </div>
     </div>
   );
 }
