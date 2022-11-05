@@ -134,6 +134,25 @@ const CryptoDetails = () => {
           </Col>
         ))}
       </Col>
+      <Col className="other-stats-info">
+        <Col className="coin-value-statistics-heading">
+          <Title level={3} className='coin-details-heading'>
+            Consolidated Stats
+          </Title>
+          <p>
+            All Currencies 
+          </p>
+        </Col>
+        {genericStats.map(({ icon, title, value }) => (
+          <Col className="coin-stats">
+            <Col className="coin-stats-name">
+              <Text>{icon}</Text>
+              <Text>{title}</Text>
+            </Col>
+            <Text className="stats">{value}</Text>
+          </Col>
+        ))}
+      </Col>
     </Col>
     </Col>
   );
